@@ -1,0 +1,9 @@
+[package]
+name = "pwsync-vita"
+version = "0.1.0"
+edition = "2021"
+
+[toolchain]
+channel = "nightly"
+
+[dependencies]
