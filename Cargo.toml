@@ -1,9 +1,20 @@
 [package]
 name = "pwsync-vita"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
 
-[toolchain]
-channel = "nightly"
+[package.metadata.vita]
+title_id = "PARAWSYNC"
+title_name = "PW Sync for PS Vita"
+# Optional. A path to static files relative to the project.
+assets = "static"
+build_std = "std,panic_unwind"
+vita_make_fself_flags = ["-s"]
+vita_mksfoex_flags = ["-d", "ATTRIBUTE2=12"]
+
+[package.metadata.vita.profile.dev]
+strip_symbols = true
+[package.metadata.vita.profile.release]
+strip_symbols = true
 
 [dependencies]
