@@ -1,3 +1,5 @@
+use std::fmt::Write;
+
 mod res;
 
 pub fn main() {
