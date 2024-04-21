@@ -19,4 +19,3 @@ strip_symbols = true
 
 [dependencies]
 vitasdk-sys = { version = "0.3.3", features = ["SceDisplay_stub", "SceSysmem_stub"] }
-rand = "0.8.5"
