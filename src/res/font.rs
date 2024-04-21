@@ -10,10 +10,10 @@ pub struct DebugFont {
 
 pub const DEBUG_FONT: DebugFont = DebugFont {
     glyphs: include_bytes!("font.bin"),
-    width: 8,
-    height: 8,
+    width: 16,
+    height: 16,
     first: 0,
     last: 255,
-    size_w: 8,
-    size_h: 8,
+    size_w: 16,
+    size_h: 16,
 };
