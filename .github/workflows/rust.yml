@@ -21,6 +21,8 @@ jobs:
     - name: Install latest nightly
       uses: actions-rs/toolchain@v1
       with:
-          components: cargo-vita
+        toolchain: nightly
+        override: true
+        components: cargo-vita
     - name: Build
       run: cargo vita build vpk -- --verbose
