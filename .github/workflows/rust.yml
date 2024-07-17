@@ -4,9 +4,11 @@ on:
   push:
     branches: [ "main" ]
     paths: [ "**.rs", "**.toml", "**.bin" ]
+
   pull_request:
     branches: [ "main" ]
     paths: [ "**.rs", "**.toml", "**.bin" ]
+
   workflow_dispatch:
 
 env:
@@ -15,6 +17,7 @@ env:
 
 jobs:
   build:
+    name: Build with Vita SDK
     runs-on: ubuntu-latest
 
     steps:
@@ -24,9 +27,28 @@ jobs:
       with:
         toolchain: nightly
         override: true
+
     - name: Install Vita SDK
       run: sh -c "$(curl -sS https://raw.githubusercontent.com/PW-Sync/pwsync-vita/main/install-sdk.sh)"
+
     - name: Install cargo-vita
       run: cargo +nightly install cargo-vita
+
     - name: Build
       run: PATH=$VITASDK/bin:$PATH cargo vita build vpk -- --verbose
+
+  lints:
+    name: Lints
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install latest nightly
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: nightly
+        override: true
+        components: rustfmt
+
+    - name: Run cargo fmt
+      run: cargo fmt --all --check

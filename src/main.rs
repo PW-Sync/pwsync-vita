@@ -1,4 +1,4 @@
-use std::{ fmt::Write, time::Duration, thread };
+use std::{fmt::Write, thread, time::Duration};
 
 mod res;
 
