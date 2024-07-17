@@ -23,6 +23,7 @@ jobs:
       with:
         toolchain: nightly
         override: true
-        components: cargo-vita
+    - name: Install cargo-vita
+      run: cargo +nightly install cargo-vita
     - name: Build
       run: cargo vita build vpk -- --verbose
