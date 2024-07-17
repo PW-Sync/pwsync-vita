@@ -34,8 +34,11 @@ jobs:
     - name: Install cargo-vita
       run: cargo +nightly install cargo-vita
 
-    - name: Build
+    - name: Build [dev]
       run: PATH=$VITASDK/bin:$PATH cargo vita build vpk -- --verbose
+
+    - name: Build [release]
+      run: PATH=$VITASDK/bin:$PATH cargo vita build vpk -- --release --verbose
 
   lints:
     name: Lints
