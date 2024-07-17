@@ -23,6 +23,8 @@ jobs:
       with:
         toolchain: nightly
         override: true
+    - name: Install Vita SDK
+      run: sh -c "$(curl -sS https://raw.githubusercontent.com/PW-Sync/pwsync-vita/main/install-sdk.sh)"
     - name: Install cargo-vita
       run: cargo +nightly install cargo-vita
     - name: Build
