@@ -1,5 +1,6 @@
 # Para Wodna Sync for PS Vita
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/PW-Sync/pwsync-vita/rust.yml)
 ![GitHub License](https://img.shields.io/github/license/PW-Sync/pwsync-vita)
 <br>
 ![GitHub repo size](https://img.shields.io/github/repo-size/PW-Sync/pwsync-vita)
