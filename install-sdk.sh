@@ -1,6 +1,6 @@
 # For GitHub Actions
 
-sudo apt-get install make git-core cmake python
+sudo apt-get install make git-core cmake python -y
 
 export VITASDK=/usr/local/vitasdk
 export PATH=$VITASDK/bin:$PATH
